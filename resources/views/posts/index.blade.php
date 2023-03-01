@@ -51,8 +51,8 @@
                 <td>{{$post -> user -> name}}</td>
                 <td>{{$post -> created_at}}</td>
                 <td class="m-2">
-                    <button class="btn btn-primary">view</button>
-                    <button class="btn btn-success">update</button>
+                    <a class="btn btn-primary">view</a>
+                    <a class="btn btn-success" href="{{route('posts.edit')}}">update</a>
                     <button class="btn btn-danger">delete</button>
                 </td>
               </tr>

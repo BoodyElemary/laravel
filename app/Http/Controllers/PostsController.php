@@ -33,4 +33,8 @@ class PostsController extends Controller
         posts::create($request->all());
         return redirect("/");
     }
+    function edit()
+    {
+        return view("posts.edit");
+    }
 }

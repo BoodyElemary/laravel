@@ -13,4 +13,21 @@ class UsersController extends Controller
         $users = User::get();
         return view("users.index", ["users" => $users]);
     }
+
+    function create()
+    {
+        return view("users.create");
+    }
+
+    function store(Request $request)
+    {
+        // $validate = $request->validate([
+        //     "title" => "required",
+        //     "author" => "required",
+        //     "description" => "required",
+        // ]);
+        // $posts->update($request->except(['_method', '_token']));
+        User::create($request->all());
+        return redirect("/users");
+    }
 }

@@ -23,3 +23,6 @@ Route::get("/", [PostsController::class, "index"])->name("posts.index");
 Route::get('/post/create', [PostsController::class, 'create'])->name('posts.create');
 Route::post('/post/create/store', [PostsController::class, 'store'])->name('posts.store');
 Route::get("/users", [UsersController::class, "index"])->name("users.index");
+Route::get('/user/create', [UsersController::class, 'create'])->name('users.create');
+Route::post('/user/create/store', [UsersController::class, 'store'])->name('users.store');
+Route::get('/post/edit', [PostsController::class, 'edit'])->name('posts.edit');

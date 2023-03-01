@@ -21,7 +21,7 @@
                 <a class="nav-link active" aria-current="page" href="{{route('posts.index')}}">All Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-warning  " href="{{route('posts.create')}}">create</a>
+                    <a class="btn btn-warning  " href="{{route('users.create')}}">create</a>
 
                 </li>
             </ul>
