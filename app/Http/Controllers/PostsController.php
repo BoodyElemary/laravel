@@ -31,6 +31,6 @@ class PostsController extends Controller
         // ]);
         // $posts->update($request->except(['_method', '_token']));
         posts::create($request->all());
-        return redirect("posts.index");
+        return redirect("/");
     }
 }

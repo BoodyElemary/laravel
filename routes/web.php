@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('posts.index');
 });
 // Route::get('/', [postsController::class, 'index'])->name('index');
-Route::get("/", [PostsController::class, "index"])->name("index");
+Route::get("/", [PostsController::class, "index"])->name("posts.index");
 Route::get('/post/create', [PostsController::class, 'create'])->name('posts.create');
 Route::post('/post/create/store', [PostsController::class, 'store'])->name('posts.store');
+Route::get("/users", [UsersController::class, "index"])->name("users.index");

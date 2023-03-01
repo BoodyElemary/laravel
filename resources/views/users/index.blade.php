@@ -17,11 +17,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-                <a class="nav-link active" href="{{route('users.index')}}" aria-current="page" >All Users</a>
-
-            </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('posts.index')}}">All Posts</a>
+                </li>
                 <li class="nav-item">
                     <a class="btn btn-warning  " href="{{route('posts.create')}}">create</a>
 
@@ -36,20 +34,19 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Creator</th>
-            <th scope="col">CreatedAt</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
 
-              @foreach ($posts as $post)
+              @foreach ($users as $user)
               <tr>
-                <th scope="row">{{$post -> id}}</th>
-                <td>{{$post -> title}}</td>
-                <td>{{$post -> user -> name}}</td>
-                <td>{{$post -> created_at}}</td>
+                <th scope="row">{{$user -> id}}</th>
+                <td>{{$user -> name}}</td>
+                <td>{{$user -> email}}</td>
+                {{-- <td>{{$post -> user -> name}}</td> --}}
                 <td class="m-2">
                     <button class="btn btn-primary">view</button>
                     <button class="btn btn-success">update</button>
@@ -58,12 +55,7 @@
               </tr>
               @endforeach
 
-          {{-- <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr> --}}
+
 
         </tbody>
       </table>
