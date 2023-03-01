@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\postsController;
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('posts.index');
 });
-Route::get('/', [postsController::class, 'index'])->name('index');
+// Route::get('/', [postsController::class, 'index'])->name('index');
+Route::get("/", [PostsController::class, "index"])->name("index");
+Route::get('/post/create', [PostsController::class, 'create'])->name('posts.create');
+Route::post('/post/create/store', [PostsController::class, 'store'])->name('posts.store');

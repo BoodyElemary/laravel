@@ -19,6 +19,11 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">All Posts</a>
+                </li>
+                <li>
+                    <a class="btn btn-warning  " href="{{route('posts.create')}}">create</a>
+
+                </li>
             </ul>
 
           </div>
@@ -39,10 +44,10 @@
 
               @foreach ($posts as $post)
               <tr>
-                <th scope="row">{{$post -> post_id}}</th>
-                <td>{{$post -> post_title}}</td>
-                <td>{{$post -> post_creator}}</td>
-                <td>{{$post -> post_createdAt}}</td>
+                <th scope="row">{{$post -> id}}</th>
+                <td>{{$post -> title}}</td>
+                <td>{{$post -> user -> name}}</td>
+                <td>{{$post -> created_at}}</td>
                 <td class="m-2">
                     <button class="btn btn-primary">view</button>
                     <button class="btn btn-success">update</button>
