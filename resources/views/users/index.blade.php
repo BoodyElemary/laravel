@@ -46,11 +46,16 @@
                 <th scope="row">{{$user -> id}}</th>
                 <td>{{$user -> name}}</td>
                 <td>{{$user -> email}}</td>
-                {{-- <td>{{$post -> user -> name}}</td> --}}
                 <td class="m-2">
-                    <button class="btn btn-primary">view</button>
+                    <a class="btn btn-primary" href="{{route("users.view",$user->id)}}">view</a>
                     <button class="btn btn-success">update</button>
-                    <button class="btn btn-danger">delete</button>
+
+                    <form action="{{route("users.destroy",$user->id)}}" method="POST" class="d-inline">
+
+                        @method("DELETE")
+                        @csrf
+                        <input type="submit" value="delete" class="btn btn-danger">
+                    </form>
                 </td>
               </tr>
               @endforeach

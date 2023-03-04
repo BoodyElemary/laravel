@@ -37,4 +37,15 @@ class PostsController extends Controller
     {
         return view("posts.edit");
     }
+    function view(posts $posts)
+    {
+        return view("posts.view", compact("posts"));
+    }
+
+    function destroy($id)
+    {
+        $post = posts::find($id);
+        $post->delete();
+        return redirect("/");
+    }
 }

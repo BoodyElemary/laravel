@@ -26,3 +26,7 @@ Route::get("/users", [UsersController::class, "index"])->name("users.index");
 Route::get('/user/create', [UsersController::class, 'create'])->name('users.create');
 Route::post('/user/create/store', [UsersController::class, 'store'])->name('users.store');
 Route::get('/post/edit', [PostsController::class, 'edit'])->name('posts.edit');
+Route::get('/post/view/{posts}', [PostsController::class, 'view'])->name('posts.view');
+Route::get('/user/view/{users}', [UsersController::class, 'view'])->name('users.view');
+Route::delete('/post/delete/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
+Route::delete('/user/delete/{id}', [UsersController::class, 'destroy'])->name('users.destroy');

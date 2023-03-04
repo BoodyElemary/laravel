@@ -30,4 +30,20 @@ class UsersController extends Controller
         User::create($request->all());
         return redirect("/users");
     }
+
+    function view(User $users)
+    {
+
+        return view("users.view", compact("users"));
+
+
+        // return redirect()
+    }
+
+    function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect("/users");
+    }
 }
